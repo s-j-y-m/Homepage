@@ -12,9 +12,12 @@ body {
     padding: 0;
     height: 100vh;
     overflow: hidden;
-    display: flex;          /* 添加flex布局 */
-    justify-content: center;/* 水平居中 */
-    align-items: center;    /* 垂直居中 */
+    display: flex;
+    /* 添加flex布局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
     color: var(--text-color);
 }
 
@@ -39,13 +42,17 @@ body {
     background: var(--container-bg);
     padding: 20px;
     border-radius: 10px;
-    max-width: 1400px;    /* 增加容器宽度，原来可能是1200px或更小 */
+    max-width: 1400px;
+    /* 增加容器宽度，原来可能是1200px或更小 */
     width: 95%;
-    height: 90vh;          /* 调整高度 */
-    margin: 0 auto;        /* 移除上下margin */
+    height: 90vh;
+    /* 调整高度 */
+    margin: 0 auto;
+    /* 移除上下margin */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    gap: 30px;            /* 增加间距 */
+    gap: 30px;
+    /* 增加间距 */
     overflow: hidden;
     transform-origin: bottom right;
     transform: scale(1);
@@ -62,7 +69,8 @@ body {
 .profile-sidebar {
     flex: 0 0 350px;
     padding: 20px;
-    background: var(--card-bg);  /* 修改为统一的背景色 */
+    background: var(--card-bg);
+    /* 修改为统一的背景色 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -71,7 +79,8 @@ body {
 }
 
 .profile-sidebar:hover {
-    background: var(--card-hover-bg);  /* 修改悬浮时的背景色 */
+    background: var(--card-hover-bg);
+    /* 修改悬浮时的背景色 */
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
@@ -82,7 +91,8 @@ body {
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 25px;  /* 增加内边距 */
+    padding: 25px;
+    /* 增加内边距 */
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
@@ -102,7 +112,8 @@ body {
 }
 
 .bio {
-    color: var(--text-color);  /* 修改文本颜色 */
+    color: var(--text-color);
+    /* 修改文本颜色 */
     margin: 15px 0;
     font-size: 0.9em;
     line-height: 1.5;
@@ -110,16 +121,21 @@ body {
 
 .social-links {
     display: flex;
-    flex-wrap: wrap;  /* 允许换行 */
+    flex-wrap: wrap;
+    /* 允许换行 */
     justify-content: center;
-    gap: 10px;  /* 减小间距 */
+    gap: 10px;
+    /* 减小间距 */
     margin-top: 20px;
-    padding: 0 5px;  /* 增加左右内边距 */
+    padding: 0 5px;
+    /* 增加左右内边距 */
 }
 
 .social-links a {
-    flex: 0 1 auto;  /* 允许项目收缩 */
-    min-width: 60px;  /* 设置最小宽度 */
+    flex: 0 1 auto;
+    /* 允许项目收缩 */
+    min-width: 60px;
+    /* 设置最小宽度 */
     color: var(--link-color);
     text-decoration: none;
     padding: 8px 15px;
@@ -144,7 +160,7 @@ body {
     padding: 15px;
     height: 100%;
     overflow: auto;
-    
+
     /* 默认隐藏滚动条 */
     &::-webkit-scrollbar {
         width: 8px;
@@ -187,7 +203,8 @@ header {
 }
 
 header h1 {
-    color: var(--text-color);  /* 修改标题颜色 */
+    color: var(--text-color);
+    /* 修改标题颜色 */
     font-size: 2.5rem;
 }
 
@@ -208,7 +225,8 @@ header h1 {
 }
 
 .nav-section h2 {
-    color: var(--text-color);  /* 修改子标题颜色 */
+    color: var(--text-color);
+    /* 修改子标题颜色 */
     margin-bottom: 2rem;
     padding-left: 10px;
 }
@@ -260,7 +278,8 @@ header h1 {
 footer {
     text-align: center;
     margin-top: 3rem;
-    color: var(--text-color);  /* 修改页脚颜色 */
+    color: var(--text-color);
+    /* 修改页脚颜色 */
     margin-top: 20px;
 }
 
@@ -302,21 +321,26 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 0;  /* 添加左对齐 */
-    right: 0; /* 添加右对齐 */
+    left: 0;
+    /* 添加左对齐 */
+    right: 0;
+    /* 添加右对齐 */
 }
 
 .theme-toggle .sun {
     transform: translateY(0);
-    margin-top: -2px; /* 微调太阳位置 */
+    margin-top: -2px;
+    /* 微调太阳位置 */
 }
 
 .theme-toggle .moon {
-    transform: translateY(150%);  /* 增加间距，原来是100% */
+    transform: translateY(150%);
+    /* 增加间距，原来是100% */
 }
 
 [data-theme="dark"] .theme-toggle .sun {
-    transform: translateY(-150%);  /* 增加间距，原来是-100% */
+    transform: translateY(-150%);
+    /* 增加间距，原来是-100% */
 }
 
 [data-theme="dark"] .theme-toggle .moon {
@@ -392,7 +416,7 @@ footer {
     .container {
         padding: 1rem;
     }
-    
+
     .nav-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
