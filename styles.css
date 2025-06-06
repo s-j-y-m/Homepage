@@ -53,16 +53,12 @@ body {
     padding: 20px;
     border-radius: 10px;
     max-width: 1400px;
-    /* 增加容器宽度，原来可能是1200px或更小 */
     width: 95%;
     height: 90vh;
-    /* 调整高度 */
     margin: 0 auto;
-    /* 移除上下margin */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     gap: 30px;
-    /* 增加间距 */
     overflow: hidden;
     transform-origin: bottom right;
     transform: scale(1);
@@ -84,7 +80,6 @@ body {
     flex: 0 0 350px;
     padding: 20px;
     background: var(--card-bg);
-    /* 修改为统一的背景色 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -93,10 +88,9 @@ body {
 }
 
 .profile-sidebar:hover {
-    background: var(--card-hover-bg);
-    /* 修改悬浮时的背景色 */
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    background: var(--card-bg);
+    transform: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .profile-card {
@@ -174,7 +168,8 @@ body {
  */
 .main-content {
     flex: 1;
-    min-width: 0;
+    min-height: 0;
+    width: 100%;
     padding: 15px;
     height: 100%;
     overflow: auto;
@@ -510,11 +505,39 @@ footer {
 
 @media (max-width: 768px) {
     .container {
-        padding: 1rem;
+        flex-direction: column;
+        overflow-y: auto;
+        height: 100vh;
+        width: 100%;
+        padding: 10px;
+        gap: 15px;
     }
 
+    .profile-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        min-height: fit-content;
+        padding: 15px;
+        overflow-y: visible;  /* 移除侧边栏独立滚动 */
+    }
+
+    .main-content {
+        height: auto;
+        flex: 1;
+        overflow: visible;  /* 移除内容区域独立滚动 */
+        padding: 0;  /* 移除内边距 */
+    }
+}
+
+/* 针对超小屏幕的额外优化 */
+@media (max-width: 380px) {
     .nav-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .nav-item {
+        font-size: 0.8em;
     }
 }
 
