@@ -125,9 +125,44 @@ body {
 .main-content {
     flex: 1;
     min-width: 0;
-    overflow-y: auto;
     padding: 15px;
     height: 100%;
+    overflow: auto;
+    
+    /* 默认隐藏滚动条 */
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+}
+
+/* 滚动时显示滚动条 */
+.main-content:active::-webkit-scrollbar-thumb,
+.main-content:focus::-webkit-scrollbar-thumb,
+.main-content:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+}
+
+/* Firefox滚动条样式 */
+.main-content {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    transition: scrollbar-color 0.3s;
+}
+
+.main-content:active,
+.main-content:focus,
+.main-content:hover {
+    scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
 }
 
 header {
