@@ -61,7 +61,91 @@ window.toggleTheme = function() {
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    // 为所有链接添加新标签页打开属性
+    document.querySelectorAll('a').forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer'); // 添加安全属性
+    });
+    
+    // 获取一言
+    fetchHitokoto();
+    // 每30秒更新一次一言
+    setInterval(fetchHitokoto, 30000);
 });
+
+// 添加延迟函数
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// 打字机效果
+async function typewriter(element, text, speed = 100) {
+    let i = 0;
+    element.textContent = '';
+    element.classList.add('cursor');  // 改为cursor类
+    
+    return new Promise(resolve => {
+        const timer = setInterval(() => {
+            if (i < text.length) {
+                element.textContent = text.substring(0, i + 1);
+                i++;
+            } else {
+                clearInterval(timer);
+                resolve();
+            }
+        }, speed);
+    });
+}
+
+// 删除文字效果
+async function deleteText(element, speed = 50) {
+    const text = element.textContent;
+    let i = text.length;
+    return new Promise(resolve => {
+        const timer = setInterval(() => {
+            if (i > 0) {
+                element.textContent = text.substring(0, i - 1);
+                i--;
+            } else {
+                clearInterval(timer);
+                resolve();
+            }
+        }, speed);
+    });
+}
+
+// 修改一言获取函数
+async function fetchHitokoto() {
+    const hitokotoText = document.querySelector('.hitokoto-text');
+    const hitokotoFrom = document.querySelector('.hitokoto-from');
+    
+    if (!hitokotoText || !hitokotoFrom) {
+        console.error('找不到一言显示元素');
+        return;
+    }
+
+    try {
+        hitokotoFrom.style.opacity = '0';
+        if (hitokotoText.textContent) {
+            await deleteText(hitokotoText, 100);  // 删除文字速度改为100ms
+        }
+
+        const response = await fetch('https://international.v1.hitokoto.cn/');
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const data = await response.json();
+        await typewriter(hitokotoText, `『${data.hitokoto}』`, 150);  // 打字速度改为150ms
+        hitokotoFrom.textContent = `——「${data.from}」`;
+        hitokotoFrom.style.opacity = '1';
+        
+    } catch (error) {
+        console.warn('获取一言失败:', error);
+        await typewriter(hitokotoText, '『让每一位玩家都能体会到MC最纯粹的乐趣!』');
+        hitokotoFrom.textContent = '——「世间一梦」';
+        hitokotoFrom.style.opacity = '1';
+    }
+}
 
 // RGB随机颜色生成函数
 function randomRGBColor() {
