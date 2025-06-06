@@ -517,3 +517,32 @@ footer {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
+
+.click-text {
+    position: fixed;
+    pointer-events: none;
+    font-size: 2rem;
+    font-weight: bold;
+    user-select: none;
+    animation: floatUpAndShake 1.5s ease-out forwards;
+}
+
+@keyframes floatUpAndShake {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-25px) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(-50px) rotate(10deg);
+    }
+    75% {
+        transform: translateY(-75px) rotate(-5deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) rotate(5deg);
+    }
+}

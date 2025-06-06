@@ -62,3 +62,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
 });
+
+// RGB随机颜色生成函数
+function randomRGBColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r},${g},${b})`;
+}
+
+// 添加点击生成喵字的效果
+document.addEventListener('click', function(event) {
+    const text = document.createElement('span');
+    text.className = 'click-text';
+    text.textContent = ['喵~', '喵喵', '喵喵喵'][Math.floor(Math.random() * 3)];
+    
+    text.style.left = (event.clientX - 15) + 'px';
+    text.style.top = (event.clientY - 15) + 'px';
+    text.style.color = randomRGBColor();
+    
+    const randomRotation = Math.random() * 30 - 15;
+    text.style.transform = `rotate(${randomRotation}deg)`;
+    
+    document.body.appendChild(text);
+    
+    text.addEventListener('animationend', () => {
+        text.remove();
+    });
+});
