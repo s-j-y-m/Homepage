@@ -8,6 +8,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
 <!--
 兄啊，我的臭代码有啥豪堪的啊（悲） 
@@ -33,7 +34,7 @@
                 <p class="bio">
                     泥嚎！我是世间一梦<br>
                     你可以叫我一梦吖或者Sjym！<br>
-                    是一位up主、程序员和服务器管理员<br>
+                    是一位up主、程序员和服主<br>
                     喜欢折腾各种东西<br>
                     </p>
                 <div class="social-links">
@@ -73,7 +74,7 @@
                     <h2>我的小站</h2>
                     <div class="nav-grid">
                         <a href="https://blog.sjym-cn.top" class="nav-item"><i class="fa-solid fa-blog"></i> 博客</a>
-                        <a href="https://sakurapink.top" class="nav-item"><i class="fa-solid fa-cube"></i> 服务器</a>
+                        <a href="https://sakurapink.top" class="nav-item"><i class="fa-solid fa-cube"></i> MC服务器</a>
                     </div>
                 </section>
             </main>
@@ -86,5 +87,15 @@
             </footer>
         </div>
     </div>
+    <div class="theme-toggle-container">
+        <button class="hide-toggle" onclick="window.hideAllExceptBg()">
+            <i class="fas fa-eye"></i>
+        </button>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <span class="sun">☀</span>
+            <span class="moon">🌙</span>
+        </button>
+    </div>
+    <div class="theme-ripple"></div>
 </body>
 </html>
