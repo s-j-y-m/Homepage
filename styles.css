@@ -361,6 +361,78 @@ footer {
     border-color: var(--link-hover-color);
 }
 
+/* 右下角控制按钮样式 */
+.control-menu {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+.control-btn i, .popup-menu button i {
+    color: var(--text-color);
+}
+
+.control-btn, .popup-menu button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    color: var(--text-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn:hover, .popup-menu button:hover {
+    background: var(--card-hover-bg);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.popup-menu {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+}
+
+.control-menu:hover .popup-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.popup-menu button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.popup-menu button:hover {
+    transform: scale(1.1);
+}
+
+/* 删除之前的float-buttons相关样式（如果有的话） */
+
 /* 隐藏模式下样式 */
 .hidden-mode .container,
 .hidden-mode .theme-ripple {
