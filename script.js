@@ -126,16 +126,18 @@ async function fetchHitokoto() {
     }
 
     try {
-        hitokotoFrom.style.opacity = '0';
+        // 每次获取新一言前，先清除当前内容
         if (hitokotoText.textContent) {
-            await deleteText(hitokotoText, 100);  // 删除文字速度改为100ms
+            hitokotoFrom.style.opacity = '0';
+            await deleteText(hitokotoText, 100);
+            await sleep(500); // 添加短暂停顿，让删除效果更明显
         }
 
         const response = await fetch('https://international.v1.hitokoto.cn/');
         if (!response.ok) throw new Error('Network response was not ok');
         
         const data = await response.json();
-        await typewriter(hitokotoText, `『${data.hitokoto}』`, 150);  // 打字速度改为150ms
+        await typewriter(hitokotoText, `『${data.hitokoto}』`, 150);
         hitokotoFrom.textContent = `——「${data.from}」`;
         hitokotoFrom.style.opacity = '1';
         
