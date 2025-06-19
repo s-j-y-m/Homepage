@@ -1,0 +1,51 @@
+# 一梦の导航页
+
+这是一个简约而优雅的个人导航页面，集成了多个实用功能和美观的视觉效果。
+
+## ✨ 特性
+
+- 🌙 明暗主题切换
+- 🌸 樱花飘落效果
+- 💭 一言语句显示
+- 👁️ 界面隐藏(看壁纸)
+- 📱 响应式设计
+- 🎨 简约现代的界面风格
+
+## 🚀 技术栈
+
+- HTML5
+- CSS3
+- JavaScript
+- Vue.js
+- Font Awesome
+
+## 🛠️ 使用方法
+
+1. 克隆项目到本地：
+```bash
+git clone https://github.com/s-j-y-m/Homepage.git
+```
+
+2. 直接打开 `index.html` 文件即可预览
+
+3. 修改个人信息：
+   - 在 `index.html` 中修改个人介绍
+   - 在 `img` 文件夹中替换头像图片
+   - 在导航链接中替换为你的常用网站
+
+## 📝 开源协议
+
+MIT License
+
+该项目采用 MIT 开源协议：
+
+- ✔️ 你可以自由使用、复制、修改、合并、发布、分发、再授权及贩售本软件的副本
+- ✔️ 唯一的要求是在软件和相关文档中包含上述版权声明和许可声明
+- ✔️ 本软件是"按原样"提供的，不做任何明示或暗示的保证
+- ✔️ 作者或版权持有人在任何情况下均不承担任何责任
+
+## 🤝 联系方式
+
+- 博客：[https://blog.sjym-cn.top](https://blog.sjym-cn.top)
+- GitHub：[https://github.com/s-j-y-m](https://github.com/s-j-y-m)
+- Bilibili：[https://space.bilibili.com/690551421](https://space.bilibili.com/690551421)
