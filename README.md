@@ -29,9 +29,9 @@ git clone https://github.com/s-j-y-m/Homepage.git
 2. 直接打开 `index.html` 文件即可预览
 
 3. 修改个人信息：
-   - 在 `index.html` 中修改个人介绍
-   - 在 `img` 文件夹中替换头像图片
-   - 在导航链接中替换为你的常用网站
+   - 在 `index.html` 中可修改个人介绍
+   - 在 `img` 文件夹中可替换头像图片
+   - 在 `index.html` 的导航链接中替换你的常用网站
 
 ## 📝 开源协议
 
@@ -46,6 +46,6 @@ MIT License
 
 ## 🤝 联系方式
 
-- 博客：[https://blog.sjym-cn.top](https://blog.sjym-cn.top)
-- GitHub：[https://github.com/s-j-y-m](https://github.com/s-j-y-m)
+### 灌注我的B站谢谢喵♥~
+
 - Bilibili：[https://space.bilibili.com/690551421](https://space.bilibili.com/690551421)
