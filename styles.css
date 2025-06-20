@@ -612,3 +612,12 @@ footer {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
+
+.icp-link {
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.icp-link:hover {
+    opacity: 0.8;
+}
