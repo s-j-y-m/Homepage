@@ -6,7 +6,7 @@
 
 也是我自己的小站~：
 
-[www.sjym-cn.top](http://www.sjym-cn.top)
+[一梦の导航页](http://www.sjym-cn.top)
 
 ## ✨ 特性
 
