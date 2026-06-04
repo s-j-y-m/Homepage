@@ -1,0 +1,132 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProfileSidebar from "../components/ProfileSidebar.vue";
+import HitokotoCard from "../components/HitokotoCard.vue";
+import NavSection from "../components/NavSection.vue";
+import ControlMenu from "../components/ControlMenu.vue";
+import SakuraCanvas from "../components/SakuraCanvas.vue";
+import ClickMeow from "../components/ClickMeow.vue";
+
+const profileLinks = [
+  { label: "GitHub", url: "https://github.com/s-j-y-m", icon: "fab fa-github" },
+  {
+    label: "Bilibili",
+    url: "https://space.bilibili.com/690551421",
+    icon: "fab fa-bilibili",
+  },
+  { label: "Blog", url: "https://blog.sjym-cn.top", icon: "fas fa-pen" },
+];
+
+const toolLinks = [
+  {
+    label: "必应搜索",
+    url: "https://www.bing.com",
+    icon: "fa-solid fa-search",
+  },
+  { label: "GitHub", url: "https://www.github.com", icon: "fab fa-github" },
+  { label: "Craft", url: "https://docs.craft.do/recents", icon: "fa-solid fa-book" },
+  {
+    label: "Gemini",
+    url: "https://gemini.google.com",
+    icon: "fa-solid fa-comments",
+  },
+];
+
+const studyLinks = [
+  {
+    label: "哔哩哔哩",
+    url: "https://www.bilibili.com",
+    icon: "fab fa-bilibili",
+  },
+  { label: "掘金", url: "https://www.juejin.cn", icon: "fas fa-gem" },
+  { label: "MC百科", url: "https://www.mcmod.cn", icon: "fas fa-cubes" },
+  {
+    label: "Minecraft Wiki",
+    url: "https://zh.minecraft.wiki/",
+    icon: "fas fa-cubes",
+  },
+];
+
+const siteLinks = [
+  {
+    label: "窝的博客",
+    url: "https://blog.sjym-cn.top",
+    icon: "fa-solid fa-blog",
+  },
+  {
+    label: "粉樱之忆",
+    url: "https://sakurapink.top",
+    icon: "fa-solid fa-cube",
+  },
+];
+---
+
+<Layout
+  title="一梦の导航页"
+  description="泥嚎！这是一个简单的导航页，进来看看吧！"
+>
+  <div
+    id="bg-layer"
+    class="fixed inset-0 w-screen h-screen z-[-1] bg-center bg-cover bg-no-repeat"
+    style="background-image: url('https://t.alcy.cc/ycy')"
+  >
+  </div>
+
+  <div
+    id="main-container"
+    class="relative p-5 rounded-[10px] w-[95%] max-w-[1400px] h-[90vh] mx-auto flex gap-[30px] overflow-hidden shadow-[0_0_10px_rgba(0,0,0,0.1)]"
+    style="background: var(--container-bg)"
+  >
+    <ProfileSidebar
+      name="世间一梦"
+      nickname="Sjym"
+      bio="泥嚎！我是世间一梦&#10;你也可以叫我一梦或者Sjym！&#10;是一位up主、程序员和服主&#10;喜欢折腾各种东西"
+      avatar="/img/绮良良.png"
+      links={profileLinks}
+      client:load
+    >
+      <HitokotoCard slot="hitokoto" client:load />
+    </ProfileSidebar>
+
+    <div
+      class="flex-1 min-h-0 w-full p-[15px] h-full custom-scrollbar overflow-auto"
+    >
+      <header class="text-center mb-12">
+        <h1 class="text-[2.5rem]" style="color: var(--text-color)">
+          <a
+            href="https://sjym-cn.top"
+            class="no-underline"
+            style="color: inherit"
+          >
+            『一梦✨の导航页』
+          </a>
+        </h1>
+      </header>
+
+      <main>
+        <NavSection title="常用工具" items={toolLinks} client:load />
+        <NavSection title="学习资源" items={studyLinks} client:load />
+        <NavSection title="我的小站" items={siteLinks} client:load />
+      </main>
+
+      <footer class="text-center mt-5" style="color: var(--text-color)">
+        <p>
+          © 2025 世间一梦<br />
+          <a
+            href="https://icp.gov.moe/?keyword=20259121"
+            target="_blank"
+            class="no-underline hover:opacity-80 transition-opacity"
+          >
+            <span style="color: #939393; margin-left: 5px">
+              萌ICP备 20259121 号
+            </span>
+          </a>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <ControlMenu client:load />
+  <SakuraCanvas client:load />
+  <ClickMeow client:load />
+</Layout>
