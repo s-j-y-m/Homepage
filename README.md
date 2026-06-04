@@ -34,3 +34,7 @@ pnpm dev
 ## 🌐 联系方式
 
 灌注[我的B站](https://space.bilibili.com/690551421)谢谢喵♥~
+
+## 📝 开源协议
+
+[MIT](LICENSE)
