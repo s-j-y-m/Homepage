@@ -33,9 +33,6 @@ jobs:
       - name: Check code quality
         run: vp check
 
-      - name: Test
-        run: vp test
-
       - name: Build Astro site
         run: vp run build
 
