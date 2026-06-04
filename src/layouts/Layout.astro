@@ -1,0 +1,45 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="世间一梦,一梦,Sjym,导航页,个人主页,博客,MC,Minecraft,哔哩哔哩,Bilibili,GitHub,工具,学习资源"
+    />
+    <meta name="author" content="世间一梦" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sjym-cn.top" />
+    <title>{title}</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script is:inline>
+      (function () {
+        var theme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+  </head>
+  <body class="m-0 h-screen overflow-hidden flex justify-center items-center">
+    <slot />
+  </body>
+</html>
