@@ -1,12 +1,12 @@
+<div align="center">
+
 # 一梦の导航页
 
-这是一个简约而优雅的个人导航页面，集成了多个实用功能和美观的视觉效果。
+[访问网页](http://www.sjym-cn.top)
 
-## 🔎 页面预览
+![Astro](https://img.shields.io/badge/Astro-6-FF5D01?style=flat-square&logo=astro&logoColor=white) ![Vue](https://img.shields.io/badge/Vue-3-4FC08D?style=flat-square&logo=vue.js&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=flat-square&logo=typescript&logoColor=white) ![Font Awesome](https://img.shields.io/badge/Font_Awesome-6-528DD7?style=flat-square&logo=fontawesome&logoColor=white) ![Vite+](https://img.shields.io/badge/Vite+-toolchain-646CFF?style=flat-square&logo=vite&logoColor=white) [![Deploy to GitHub Pages](https://github.com/s-j-y-m/Homepage/actions/workflows/deploy.yml/badge.svg)](https://github.com/s-j-y-m/Homepage/actions/workflows/deploy.yml)
 
-也是我自己的小站~：
-
-[一梦の导航页](http://www.sjym-cn.top)
+</div>
 
 ## ✨ 特性
 
@@ -17,42 +17,20 @@
 - 📱 响应式设计
 - 🎨 简约现代的界面风格
 
-## 🚀 技术栈
-
-- HTML5
-- CSS3
-- JavaScript
-- Vue.js
-- Font Awesome
-
-## 🛠️ 使用方法
-
-1. 克隆项目到本地：
+## 🛠️ 本地开发
 
 ```bash
-git clone https://github.com/s-j-y-m/Homepage.git
+# 克隆项目
+git clone https://github.com/s-j-y-m/Homepage
+cd Homepage
+
+# 安装依赖
+pnpm install
+
+# 启动开发服务器
+pnpm dev
 ```
 
-2. 直接打开 `index.html` 文件即可预览
+## 🌐 联系方式
 
-3. 修改个人信息：
-   - 在 `index.html` 中可修改个人介绍
-   - 在 `img` 文件夹中可替换头像图片
-   - 在 `index.html` 的导航链接中替换你的常用网站
-
-## 📝 开源协议
-
-MIT License
-
-该项目采用 MIT 开源协议：
-
-- ✔️ 你可以自由使用、复制、修改、合并、发布、分发、再授权及贩售本软件的副本
-- ✔️ 唯一的要求是在软件和相关文档中包含上述版权声明和许可声明
-- ✔️ 本软件是"按原样"提供的，不做任何明示或暗示的保证
-- ✔️ 作者或版权持有人在任何情况下均不承担任何责任
-
-## 🤝 联系方式
-
-### 灌注我的B站谢谢喵♥~
-
-- Bilibili：[https://space.bilibili.com/690551421](https://space.bilibili.com/690551421)
+灌注[我的B站](https://space.bilibili.com/690551421)谢谢喵♥~
