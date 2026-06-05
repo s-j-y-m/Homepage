@@ -3,6 +3,7 @@
  */
 let isHidden = false; // 控制界面显示/隐藏状态
 let lastTheme = null; // 记录上一次的主题设置
+let isFetchingHitokoto = false; // 防止一言获取并发冲突
 
 /**
  * 界面显示/隐藏控制函数
@@ -70,8 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 获取一言
     fetchHitokoto();
-    // 每30秒更新一次一言
-    setInterval(fetchHitokoto, 30000);
 });
 
 // 添加延迟函数
@@ -115,13 +114,18 @@ async function deleteText(element, speed = 50) {
     });
 }
 
-// 修改一言获取函数
+// 修改一言获取函数（带并发锁 + 动态间隔，解决重叠抽搐问题）
 async function fetchHitokoto() {
+    // 并发锁：上次调用尚未结束则跳过本次
+    if (isFetchingHitokoto) return;
+    isFetchingHitokoto = true;
+
     const hitokotoText = document.querySelector('.hitokoto-text');
     const hitokotoFrom = document.querySelector('.hitokoto-from');
     
     if (!hitokotoText || !hitokotoFrom) {
         console.error('找不到一言显示元素');
+        isFetchingHitokoto = false;
         return;
     }
 
@@ -146,6 +150,10 @@ async function fetchHitokoto() {
         await typewriter(hitokotoText, '『让每一位玩家都能体会到MC最纯粹的乐趣!』');
         hitokotoFrom.textContent = '——「世间一梦」';
         hitokotoFrom.style.opacity = '1';
+    } finally {
+        isFetchingHitokoto = false;
+        // 递归调度下一次，确保不会并发重叠
+        setTimeout(fetchHitokoto, 30000);
     }
 }
 
@@ -157,8 +165,12 @@ function randomRGBColor() {
     return `rgb(${r},${g},${b})`;
 }
 
-// 添加点击生成喵字的效果
+// 添加点击生成喵字的效果（节流，最多每200ms一次）
+let lastClickTime = 0;
 document.addEventListener('click', function(event) {
+    const now = Date.now();
+    if (now - lastClickTime < 200) return;
+    lastClickTime = now;
     const text = document.createElement('span');
     text.className = 'click-text';
     text.textContent = ['喵~', '喵喵', '喵喵喵'][Math.floor(Math.random() * 3)];

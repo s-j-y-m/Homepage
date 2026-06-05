@@ -108,7 +108,7 @@ function getRandom(option) {
     return ret;
 }
 
-export function startSakura() {
+function startSakura() {
 	stopp()
     let requestAnimationFrame = window.requestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -123,7 +123,8 @@ export function startSakura() {
     document.getElementsByTagName('body')[0].appendChild(canvas);
     cxt = canvas.getContext('2d');
     let sakuraList = new SakuraList();
-    for (let i = 0; i < 50; i++) {
+    const petalCount = window.innerWidth < 768 ? 20 : 35;
+    for (let i = 0; i < petalCount; i++) {
         let sakura, randomX, randomY, randomS, randomR, randomFnx, randomFny, randomFnR;
         randomX = getRandom('x');
         randomY = getRandom('y');
@@ -141,9 +142,11 @@ export function startSakura() {
         sakuraList.push(sakura);
     }
     stop = requestAnimationFrame(function reverse() {
-        cxt.clearRect(0, 0, canvas.width, canvas.height);
-        sakuraList.update();
-        sakuraList.draw(cxt);
+        if (!document.hidden) {
+            cxt.clearRect(0, 0, canvas.width, canvas.height);
+            sakuraList.update();
+            sakuraList.draw(cxt);
+        }
         stop = requestAnimationFrame(reverse);
     })
 }
@@ -159,7 +162,7 @@ img.onload = function () {
     startSakura();
 }
 
-export function stopp() {
+function stopp() {
     let child = document.getElementById("canvas_sakura");
     if (child) {
         child.parentNode.removeChild(child);
