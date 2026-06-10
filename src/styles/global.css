@@ -178,6 +178,13 @@ body {
   transition: transform 0.3s;
 }
 
+.nav-icon {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+  vertical-align: -0.125em;
+}
+
 .nav-link:hover {
   background: var(--card-hover-bg) !important;
   color: var(--link-hover-color) !important;
