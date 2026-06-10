@@ -15,7 +15,7 @@ defineProps<{
     </h2>
     <div
       class="grid gap-4 p-[5px]"
-      style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))"
+      style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr))"
     >
       <a
         v-for="item in items"
@@ -23,14 +23,14 @@ defineProps<{
         :href="item.url"
         target="_blank"
         rel="noopener noreferrer"
-        class="nav-link glass-sm text-center no-underline rounded-[10px] p-[15px]"
+        class="nav-link glass-sm flex items-center justify-center gap-[0.4em] text-center no-underline rounded-[10px] p-[15px]"
         style="
           background: var(--card-bg);
           color: var(--link-color);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         "
       >
-        <i :class="item.icon" class="mr-1.5"></i>
+        <i :class="item.icon" class="shrink-0"></i>
         {{ item.label }}
       </a>
     </div>
