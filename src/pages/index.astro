@@ -1,20 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProfileSidebar from "../components/ProfileSidebar.vue";
-import HitokotoCard from "../components/HitokotoCard.vue";
 import NavSection from "../components/NavSection.vue";
 import ControlMenu from "../components/ControlMenu.vue";
 import SakuraCanvas from "../components/SakuraCanvas.vue";
 import ClickMeow from "../components/ClickMeow.vue";
 
 const profileLinks = [
-  { label: "GitHub", url: "https://github.com/s-j-y-m", icon: "fab fa-github" },
+  { label: "GitHub", url: "https://github.com/s-j-y-m" },
   {
     label: "Bilibili",
     url: "https://space.bilibili.com/690551421",
-    icon: "fab fa-bilibili",
   },
-  { label: "Blog", url: "https://blog.sjym-cn.top", icon: "fas fa-pen" },
+  { label: "Blog", url: "https://blog.sjym-cn.top" },
 ];
 
 const toolLinks = [
@@ -106,9 +104,7 @@ const aiLinks = [
       avatar="/img/绮良良.png"
       links={profileLinks}
       client:load
-    >
-      <HitokotoCard slot="hitokoto" client:load />
-    </ProfileSidebar>
+    />
 
     <div
       class="flex-1 min-h-0 w-full p-[15px] h-full custom-scrollbar overflow-auto"
@@ -126,10 +122,10 @@ const aiLinks = [
       </header>
 
       <main>
-        <NavSection title="常用工具" items={toolLinks} client:load />
-        <NavSection title="学习资源" items={studyLinks} client:load />
-        <NavSection title="我的小站" items={siteLinks} client:load />
-        <NavSection title="AI" items={aiLinks} client:load />
+        <NavSection title="常用工具" items={toolLinks} />
+        <NavSection title="学习资源" items={studyLinks} />
+        <NavSection title="我的小站" items={siteLinks} />
+        <NavSection title="AI" items={aiLinks} />
       </main>
 
       <footer class="text-center mt-5" style="color: var(--text-color)">

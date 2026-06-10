@@ -4,4 +4,6 @@ import { useClickEffect } from "../composables/useClickEffect";
 useClickEffect();
 </script>
 
-<template></template>
+<template>
+  <span class="hidden" aria-hidden="true"></span>
+</template>
