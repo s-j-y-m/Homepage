@@ -20,7 +20,7 @@ defineProps<{
       <img
         :src="avatar"
         :alt="`${name}的头像`"
-        class="w-[120px] h-[120px] rounded-[60px] mb-[15px] object-cover"
+        class="mx-auto w-[120px] h-[120px] rounded-[60px] mb-[15px] object-cover"
       />
       <h1 class="text-2xl font-bold" style="color: var(--text-color)">
         {{ name }}
@@ -42,7 +42,7 @@ defineProps<{
           :href="link.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="profile-link min-w-[60px] no-underline px-4 py-2 rounded-[10px] glass-sm"
+          class="profile-link min-w-[60px] no-underline px-4 py-2 rounded-[10px] glass-sm inline-flex items-center justify-center gap-1.5"
           style="
             background: var(--card-bg);
             color: var(--link-color);
@@ -50,6 +50,7 @@ defineProps<{
           "
         >
           <i :class="link.icon"></i>
+          {{ link.label }}
         </a>
       </div>
     </div>
