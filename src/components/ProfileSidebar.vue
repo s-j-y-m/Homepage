@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import HitokotoCard from "./HitokotoCard.vue";
+
 defineProps<{
   name: string;
   nickname: string;
   bio: string;
   avatar: string;
-  links: { label: string; url: string; icon: string }[];
+  links: { label: string; url: string }[];
 }>();
 </script>
 
@@ -42,19 +44,18 @@ defineProps<{
           :href="link.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="profile-link min-w-[60px] no-underline px-4 py-2 rounded-[10px] glass-sm inline-flex items-center justify-center gap-1.5"
+          class="profile-link min-w-[60px] no-underline px-4 py-2 rounded-[10px] glass-sm inline-flex items-center justify-center"
           style="
             background: var(--card-bg);
             color: var(--link-color);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
           "
         >
-          <i :class="link.icon"></i>
           {{ link.label }}
         </a>
       </div>
     </div>
 
-    <slot name="hitokoto" />
+    <HitokotoCard />
   </aside>
 </template>
