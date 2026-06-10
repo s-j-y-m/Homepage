@@ -5,7 +5,9 @@ import { useSakura } from "../composables/useSakura";
 let cleanup: (() => void) | undefined;
 
 onMounted(() => {
-  cleanup = useSakura();
+  const { startSakura, stopp } = useSakura();
+  startSakura();
+  cleanup = stopp;
 });
 
 onUnmounted(() => {
@@ -13,4 +15,6 @@ onUnmounted(() => {
 });
 </script>
 
-<template></template>
+<template>
+  <canvas id="canvas_sakura" aria-hidden="true"></canvas>
+</template>
